@@ -6,6 +6,12 @@
 
 ---
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/Machine_Learning-2563EB?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-In_Development-16A34A?style=for-the-badge)
+
+
 ## Overview
 
 Clothing Types Classification is a machine learning project developed for SAIA 2113 — Machine Learning at Universiti Teknologi Malaysia (UTM).
@@ -59,6 +65,19 @@ The project uses the Clothing Dataset (Small) by Alexey Grigorev as its primary 
 | **Total** | **2,278** | **600** |
 
 The final dataset contains an equal number of images per class. The original folder label `outwear` is retained for implementation consistency.
+
+### Dataset Preview
+
+![Final Dataset Samples](assets/final_dataset_samples.png)
+
+*Representative samples from the five curated clothing categories.*
+
+### Class Distribution Visualization
+
+![Class Distribution](assets/final_class_distribution.png)
+
+*Balanced dataset containing 120 verified images per class.*
+
 
 ### Dataset Quality Assurance
 
@@ -122,6 +141,23 @@ Grad-CAM visualization and interpretation of meaningful image regions influencin
 **06 — Comparative Analysis**
 
 Comparison of supervised and unsupervised learning results, limitations, and potential improvements.
+
+
+## Implementation Notebooks
+
+| Phase | Notebook | Status |
+|---|---|---|
+| 01 | Data Collection and Cleaning | Completed |
+| 02 | Data Preprocessing | Planned |
+| 03 | Supervised Learning | Planned |
+| 04 | Unsupervised Learning | Planned |
+| 05 | Explainable AI | Planned |
+| 06 | Comparative Analysis | Planned |
+
+### Phase 01 — Data Collection and Cleaning
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ShamsirIsmail/Clothing-Types-Machine-Learning-Assignment/blob/main/notebooks/01_data_collection.ipynb)
+
 
 ## Technology Stack
 
