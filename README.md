@@ -455,10 +455,12 @@ Final dataset inclusion decisions are based on human verification.
 
 AI usage is documented transparently and is subject to the academic integrity requirements of SAIA 2113.
 
+
 ### Supporting Documentation
 
 - [AI Prompt Log](documentation/AI_Prompt_Log.md)
-- [Original Dataset Licence](https://github.com/alexeygrigorev/clothing-dataset-small/blob/master/LICENSE)
+- [Dataset Licence](documentation/DATASET_LICENSE.txt)
+- [Original Dataset Repository](https://github.com/alexeygrigorev/clothing-dataset-small)
 - [Creative Commons CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 
 
