@@ -66,17 +66,19 @@ The project uses the Clothing Dataset (Small) by Alexey Grigorev as its primary 
 
 The final dataset contains an equal number of images per class. The original folder label `outwear` is retained for implementation consistency.
 
-### Dataset Preview
 
-![Final Dataset Samples](assets/final_dataset_samples.png)
+<h3>Dataset Preview</h3>
 
-*Representative samples from the five curated clothing categories.*
+<p align="center">
+  <img src="assets/final_dataset_samples.png"
+       alt="Curated Clothing Types Dataset"
+       width="900">
+</p>
 
-### Class Distribution Visualization
+<p align="center">
+  <sub>600 curated images · 5 clothing categories · 120 images per class</sub>
+</p>
 
-![Class Distribution](assets/final_class_distribution.png)
-
-*Balanced dataset containing 120 verified images per class.*
 
 
 ### Dataset Quality Assurance
@@ -114,33 +116,212 @@ CLIP was used to assist candidate screening rather than automatically assign gro
 
 Pending, rejected, and uncertain images are excluded from the final dataset.
 
+
 ## Machine Learning Pipeline
 
-The project follows six main implementation phases.
+The project follows a structured machine learning workflow, integrating data quality assurance, supervised classification, unsupervised clustering, and model explainability.
 
-**01 — Data Collection and Cleaning**
+```mermaid
+flowchart TD
+    A["01 - Data Collection & Cleaning"]
+    B["02 - Data Preprocessing"]
+    C["03 - Supervised Learning"]
+    D["04 - Unsupervised Learning"]
+    E["05 - Explainable AI"]
+    F["06 - Comparative Analysis"]
 
-Dataset acquisition, technical quality assessment, visual label verification, and final dataset selection.
+    A --> B
+    B --> C
+    B --> D
+    C --> E
+    E --> F
+    D --> F
 
-**02 — Data Preprocessing**
+    classDef completed fill:#dcfce7,stroke:#16a34a,color:#166534,stroke-width:2px;
+    classDef next fill:#dbeafe,stroke:#2563eb,color:#1e40af,stroke-width:2px;
+    classDef planned fill:#f1f5f9,stroke:#94a3b8,color:#334155;
 
-Image resizing, normalization, label encoding, stratified dataset splitting, and training-only data augmentation.
+    class A completed;
+    class B next;
+    class C,D,E,F planned;
+```
 
-**03 — Supervised Learning**
+**Status:** Completed (Green) · Next Phase (Blue) · Planned (Grey)
 
-Image classification using a proposed transfer learning approach with MobileNetV2, including hyperparameter tuning and model evaluation.
+### Implementation Details
 
-**04 — Unsupervised Learning**
+<details>
+<summary><b>01 — Data Collection & Cleaning</b> · Completed</summary>
 
-Independent feature extraction, K-Means clustering, optimal cluster selection, and comparison against ground-truth labels.
+<br>
 
-**05 — Explainable AI**
+**Objective**
 
-Grad-CAM visualization and interpretation of meaningful image regions influencing model predictions.
+Build a balanced and carefully curated clothing image dataset with consistent class labels.
 
-**06 — Comparative Analysis**
+**Implementation**
 
-Comparison of supervised and unsupervised learning results, limitations, and potential improvements.
+- Dataset acquisition and class selection
+- Image integrity and resolution assessment
+- SHA-256 exact duplicate detection
+- Perceptual hash similarity analysis
+- Interactive human label verification
+- CLIP-assisted candidate screening
+- Final dataset validation and export
+
+**Results**
+
+| Metric | Result |
+|---|---:|
+| Raw images | 2,278 |
+| Final images | 600 |
+| Clothing categories | 5 |
+| Images per class | 120 |
+| Validation checks | 8/8 passed |
+
+**Technologies:** Pandas, Pillow, ImageHash, PyTorch, Transformers, ipywidgets.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ShamsirIsmail/Clothing-Types-Machine-Learning-Assignment/blob/main/notebooks/01_data_collection.ipynb)
+
+</details>
+
+<details>
+<summary><b>02 — Data Preprocessing</b> · Next Phase</summary>
+
+<br>
+
+**Objective**
+
+Prepare the cleaned dataset for reliable machine learning experiments.
+
+**Planned Implementation**
+
+- Image resizing and aspect ratio preservation
+- RGB image conversion
+- Pixel normalization
+- Numerical label encoding
+- Stratified train, validation, and test splitting
+- Training-only data augmentation
+- Data leakage prevention
+
+**Expected Outputs**
+
+- Reproducible dataset splits
+- Class mapping
+- Preprocessing configuration
+- Dataset distribution visualizations
+
+**Technologies:** NumPy, Pillow, TensorFlow, scikit-learn.
+
+</details>
+
+<details>
+<summary><b>03 — Supervised Learning</b> · Planned</summary>
+
+<br>
+
+**Objective**
+
+Develop and evaluate a multiclass clothing classification model.
+
+**Planned Implementation**
+
+- MobileNetV2 transfer learning
+- Classification head development
+- Hyperparameter tuning
+- Model training and validation
+- Independent test set evaluation
+
+**Evaluation Metrics**
+
+- Accuracy
+- Macro Precision
+- Macro Recall
+- Macro F1-Score
+- Confusion Matrix
+
+**Expected Outputs**
+
+Trained classification model, learning curves, classification report, and confusion matrix.
+
+</details>
+
+<details>
+<summary><b>04 — Unsupervised Learning</b> · Planned</summary>
+
+<br>
+
+**Objective**
+
+Investigate whether clothing images can be grouped into meaningful clusters without using class labels during clustering.
+
+**Planned Implementation**
+
+- Independent image feature extraction
+- Feature scaling
+- Dimensionality reduction using PCA
+- K-Means clustering
+- Optimal cluster selection
+- Cluster interpretation
+
+**Evaluation Metrics**
+
+- Elbow Method
+- Silhouette Score
+- Adjusted Rand Index
+- Normalized Mutual Information
+
+**Expected Outputs**
+
+Cluster visualizations, clustering evaluation, and representative cluster samples.
+
+</details>
+
+<details>
+<summary><b>05 — Explainable AI</b> · Planned</summary>
+
+<br>
+
+**Objective**
+
+Interpret the visual features influencing supervised model predictions.
+
+**Planned Implementation**
+
+- Grad-CAM heatmap generation
+- Visualization of important image regions
+- Correct classification analysis
+- Misclassification analysis
+- Identification of potential model biases
+
+**Expected Outputs**
+
+Grad-CAM visualizations and documented prediction interpretations.
+
+</details>
+
+<details>
+<summary><b>06 — Comparative Analysis</b> · Planned</summary>
+
+<br>
+
+**Objective**
+
+Compare the strengths, limitations, and performance of supervised and unsupervised learning approaches.
+
+**Planned Implementation**
+
+- Comparison of evaluation results
+- Analysis of classification and clustering behavior
+- Investigation of ambiguous clothing categories
+- Discussion of dataset and model limitations
+- Recommendations for future improvements
+
+**Expected Outputs**
+
+Comparative results and documented experimental findings.
+
+</details>
 
 
 ## Implementation Notebooks
