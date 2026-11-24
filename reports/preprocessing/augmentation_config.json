@@ -1,0 +1,14 @@
+{
+    "method": "online",
+    "enabled_for": [
+        "train"
+    ],
+    "horizontal_flip": true,
+    "rotation_degrees": 5,
+    "brightness_factor": 0.06,
+    "contrast_factor": 0.1,
+    "fill_mode": "constant",
+    "fill_value": 128,
+    "random_seed": 42,
+    "tensorflow_version": "2.21.0"
+}
