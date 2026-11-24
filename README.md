@@ -444,13 +444,23 @@ The project maintains reproducibility through:
 
 The finalized dataset and its accompanying documentation are preserved as a ZIP archive for subsequent machine learning experiments.
 
+
 ## Academic Integrity
 
 This repository is maintained for academic and educational purposes.
 
-AI-assisted coding and dataset screening are documented transparently. Final dataset inclusion decisions are based on human verification.
+AI tools are used to assist code implementation, debugging, documentation, and dataset screening.
 
-The use of AI tools is subject to the course's academic integrity requirements.
+Final dataset inclusion decisions are based on human verification.
+
+AI usage is documented transparently and is subject to the academic integrity requirements of SAIA 2113.
+
+### Supporting Documentation
+
+- [AI Prompt Log](documentation/AI_Prompt_Log.md)
+- [Original Dataset Licence](https://github.com/alexeygrigorev/clothing-dataset-small/blob/master/LICENSE)
+- [Creative Commons CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
 
 ## Acknowledgements
 
