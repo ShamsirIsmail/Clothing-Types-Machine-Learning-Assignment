@@ -409,6 +409,180 @@ Clothing-Types-Machine-Learning-Assignment/
 
 Raw datasets and large experiment artifacts are maintained separately from the source code repository.
 
+
+<details>
+<summary><b>02 — Data Preprocessing</b> · Completed</summary>
+
+<br>
+
+### Overview
+
+The cleaned dataset was standardized and validated
+to ensure consistent and reproducible input for
+machine learning experiments.
+
+### Preprocessing Pipeline
+
+- Exploratory Data Analysis (EDA)
+- Numerical label encoding
+- Stratified dataset splitting
+- Aspect-ratio-preserving image resizing
+- RGB standardization
+- MobileNetV2-compatible pixel normalization
+- Training-only online data augmentation
+- Final dataset integrity validation
+
+### Dataset Distribution
+
+| Clothing Type | Train | Validation | Test | Total |
+|---|---:|---:|---:|---:|
+| T-Shirt | 84 | 18 | 18 | 120 |
+| Pants | 84 | 18 | 18 | 120 |
+| Dress | 84 | 18 | 18 | 120 |
+| Shorts | 84 | 18 | 18 | 120 |
+| Outerwear | 84 | 18 | 18 | 120 |
+| **Total** | **420** | **90** | **90** | **600** |
+
+### Preprocessing Configuration
+
+| Parameter | Configuration |
+|---|---|
+| Image dimensions | 224 × 224 × 3 |
+| Colour mode | RGB |
+| Storage format | PNG |
+| Resizing method | Aspect-ratio-preserving padding |
+| Padding colour | Neutral grey (128, 128, 128) |
+| Model input range | [-1, 1] |
+| Model input type | Float32 |
+| Dataset split | 70:15:15 |
+| Augmentation | Online, training only |
+| Random seed | 42 |
+
+### Exploratory Data Analysis
+
+<p align="center">
+  <img src="assets/preprocessing/eda_dashboard.png"
+       width="850" alt="EDA Dashboard">
+</p>
+
+### Stratified Dataset Distribution
+
+<p align="center">
+  <img src="assets/preprocessing/split_distribution.png"
+       width="850" alt="Dataset Split Distribution">
+</p>
+
+### Image Resizing Comparison
+
+<p align="center">
+  <img src="assets/preprocessing/resize_method_comparison.png"
+       width="750" alt="Image Resizing Comparison">
+</p>
+
+### Pixel Normalization
+
+<p align="center">
+  <img src="assets/preprocessing/normalization_comparison.png"
+       width="850" alt="Pixel Normalization">
+</p>
+
+### Training Data Augmentation
+
+| Transformation | Configuration |
+|---|---|
+| Horizontal flip | Enabled |
+| Rotation | ±5 degrees |
+| Brightness | ±6% of pixel range |
+| Contrast | ±10% |
+
+<p align="center">
+  <img src="assets/preprocessing/augmentation_preview.png"
+       width="750" alt="Training Data Augmentation">
+</p>
+
+### Validation Results
+
+| Validation | Result |
+|---|---|
+| Processed image integrity | 600/600 passed |
+| Data splitting validation | 10/10 passed |
+| Augmentation validation | 7/7 passed |
+| Final preprocessing validation | 18/18 passed |
+| Original hash overlap | 0 |
+| Processed pixel overlap | 0 |
+| Dataset archive integrity | Passed |
+
+No exact image overlap was detected between
+dataset partitions.
+
+The original cleaned dataset remains unchanged.
+Normalization and random augmentation are applied
+during model input preparation, with augmentation
+restricted to training.
+
+### Supporting Files
+
+- [Class Mapping](reports/preprocessing/class_mapping.json)
+- [Split Configuration](reports/preprocessing/split_config.json)
+- [Preprocessing Configuration](reports/preprocessing/preprocessing_config.json)
+- [Augmentation Configuration](reports/preprocessing/augmentation_config.json)
+- [Final Validation Report](reports/preprocessing/final_preprocessing_validation.csv)
+- [Preprocessing Summary](reports/preprocessing/final_preprocessing_summary.csv)
+- [Python Requirements](requirements_phase2.txt)
+
+### Implementation
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ShamsirIsmail/Clothing-Types-Machine-Learning-Assignment/blob/main/notebooks/02_data_preprocessing.ipynb)
+
+</details>
+
+
+## Implementation Notebooks
+
+| Phase | Notebook | Status |
+|---|---|---|
+| 01 | [Data Collection & Cleaning](notebooks/01_data_collection.ipynb) | Completed |
+| 02 | [Data Preprocessing](notebooks/02_data_preprocessing.ipynb) | Completed |
+| 03 | Supervised Learning | In Progress |
+| 04 | Unsupervised Learning | Planned |
+| 05 | Explainable AI | Planned |
+| 06 | Comparative Analysis | Planned |
+
+
+## Repository Structure
+
+```text
+Clothing-Types-Machine-Learning-Assignment/
+│
+├── assets/
+│   ├── preprocessing/
+│   ├── final_class_distribution.png
+│   └── final_dataset_samples.png
+│
+├── documentation/
+│   ├── AI_Prompt_Log.md
+│   └── DATASET_LICENSE.txt
+│
+├── notebooks/
+│   ├── 01_data_collection.ipynb
+│   └── 02_data_preprocessing.ipynb
+│
+├── reports/
+│   └── preprocessing/
+│
+├── .gitignore
+├── README.md
+├── requirements_phase1.txt
+└── requirements_phase2.txt
+```
+
+The repository contains implementation notebooks,
+technical documentation, visualizations, and
+experiment configurations.
+
+The raw, cleaned, and processed datasets are stored
+separately in Google Drive.
+
 ## Project Progress
 
 - [x] Project setup
