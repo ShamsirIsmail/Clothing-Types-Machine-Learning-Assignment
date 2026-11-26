@@ -62,6 +62,60 @@ The final dataset contains 600 selected images across five classes. CLIP was use
 
 Confirm that the use of CLIP for dataset screening complies with the lecturer's AI-use policy before submission. The prompt summaries must not be represented as the exact prompts originally submitted.
 
-## Phase 2 — Data Preprocessing
+## Phase 02 — Data Preprocessing
 
-Prompt records will be added as implementation progresses.
+**Notebook:** 02_data_preprocessing.ipynb  
+**AI Tool:** ChatGPT
+
+The following entries are retrospective summaries of the AI coding assistance used during Phase 2.
+
+### Prompt 07 — Exploratory Data Analysis
+
+**Purpose:** Understand dataset characteristics.
+
+**Prompt Summary:**
+
+Provide Python code to analyze image dimensions, aspect ratios, colour modes, brightness, and contrast. Generate descriptive statistics and suitable visualizations.
+
+### Prompt 08 — Label Encoding and Data Splitting
+
+**Purpose:** Prepare numerical labels and balanced dataset partitions.
+
+**Prompt Summary:**
+
+Encode the five clothing classes and perform stratified 70:15:15 dataset splitting using a fixed random seed. Verify class distributions and check for image overlap.
+
+### Prompt 09 — Image Resizing and Normalization
+
+**Purpose:** Standardize images for machine learning.
+
+**Prompt Summary:**
+
+Compare image resizing methods and resize images to 224 × 224 pixels while preserving their aspect ratios. Implement pixel normalization compatible with MobileNetV2.
+
+### Prompt 10 — Data Augmentation
+
+**Purpose:** Increase training image diversity.
+
+**Prompt Summary:**
+
+Implement controlled online data augmentation using horizontal flipping, rotation, brightness, and contrast adjustments. Apply augmentation to training data only and validate the results.
+
+### Prompt 11 — Final Validation and Export
+
+**Purpose:** Verify dataset integrity and reproducibility.
+
+**Prompt Summary:**
+
+Validate processed images, numerical labels, dataset partitions, and preprocessing configurations. Export the processed dataset, validation reports, and library version information.
+
+### Human Verification
+
+The generated code was executed in Google Colab, and the resulting outputs were inspected.
+
+- All 600 processed images passed integrity validation.
+- All 18 final preprocessing validation checks passed.
+- No exact image overlap was detected between dataset partitions.
+- The original cleaned dataset was preserved.
+- Data augmentation was configured for training only.
+- The processed dataset was successfully exported and its archive integrity was verified.
